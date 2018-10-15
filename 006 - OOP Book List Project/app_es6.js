@@ -116,10 +116,11 @@ document.getElementById("book-form").addEventListener("submit", function(e) {
 
 // Event listener for delete
 document.getElementById("book-list").addEventListener("click", function(e){
-    // Instantiate UI
+
     const ui = new UI();
+    ui.showAlert("Book removed from list", "success");
     ui.deleteBook(e.target);
     Store.removeBook(e.target.parentElement.previousElementSibling.textContent);
-    ui.showAlert("Book removed from list", "success");
+
     e.preventDefault();
 })
